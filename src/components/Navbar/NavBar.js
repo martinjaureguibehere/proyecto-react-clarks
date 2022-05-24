@@ -11,8 +11,13 @@
     import Button from '@mui/material/Button';
     import Tooltip from '@mui/material/Tooltip';
     import MenuItem from '@mui/material/MenuItem';
-    import AdbIcon from '@mui/icons-material/Adb';
     import CartWidget from '../CartWidget/CartWidget';
+    import Avatar from '@mui/material/Avatar';
+    import '@fontsource/roboto/300.css';
+    import '@fontsource/roboto/400.css';
+    import '@fontsource/roboto/500.css';
+    import '@fontsource/roboto/700.css';
+
     
     //NavBar
 
@@ -42,7 +47,7 @@
         <AppBar position="static">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+              <Avatar className='avatar' alt='imagen del logo miniatura' src='./Zara-Logo-5.png'/>
               <Typography
                 variant="h6"
                 noWrap
@@ -98,8 +103,6 @@
                   ))}
                 </Menu>
               </Box>
-              
-              <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
               <Typography
                 variant="h5"
                 noWrap

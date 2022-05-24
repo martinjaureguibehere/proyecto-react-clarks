@@ -13,25 +13,30 @@ function App () {
       <ResponsiveAppBar/>
       <div>
       <Grid container>
-        <Grid item md={3}>
-      <ImgMediaCard/>
-      </Grid>
-      <Grid item md={3}>
-      <ImgMediaCard/>
-      </Grid>
-      <Grid item md={3}>
-      <ImgMediaCard/>
-      </Grid>
-      <Grid item md={3}>
-      <ImgMediaCard/>
-      </Grid>
-      
-     
-    
-
-
-
-
+       <Grid item md={3}>
+       <ImgMediaCard/>
+       </Grid>
+       <Grid item md={3}>
+       <ImgMediaCard/>
+       </Grid>
+       <Grid item md={3}>
+       <ImgMediaCard/>
+       </Grid>
+       <Grid item md={3}>
+       <ImgMediaCard/>
+       </Grid>
+       <Grid item md={3}>
+       <ImgMediaCard/>
+       </Grid>
+       <Grid item md={3}>
+       <ImgMediaCard/>
+       </Grid>
+       <Grid item md={3}>
+       <ImgMediaCard/>
+       </Grid>
+       <Grid item md={3}>
+       <ImgMediaCard/>
+       </Grid>
       </Grid>
       </div>
       </div>

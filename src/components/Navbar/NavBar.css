@@ -2,3 +2,33 @@
     background-color: #fff !important;
     color: black !important;
 }
+/*botones de productos nosotros y mas*/
+.css-1t6c9ts {
+    margin-left: 15%;
+}
+.css-1e4e1qc-MuiButtonBase-root-MuiButton-root-1t6c9ts:hover {
+    background-color: black !important;
+
+}
+
+/*imagen del logo de la izquierda*/
+.avatar {
+    padding: 10px 50px !important;
+    width: max-content !important;
+}
+/*Evita que la imagen del logo no aparezca en sigioentes pantallas*/
+@media screen and (max-width: 600px) {
+    .avatar {
+    display: none !important;
+}
+}
+
+/*alinea titulo en resolucion peueña*/
+.css-1lfs2tq-MuiTypography-root {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}*/
+/*fondo de botones producto,nosotros y demas*/
+.css-1e4e1qc-MuiButtonBase-root-MuiButton-root {
+    background-color: #FEF8F7 !important;
+}
