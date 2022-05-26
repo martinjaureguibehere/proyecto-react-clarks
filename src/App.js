@@ -1,7 +1,7 @@
 import './App.css';
 import ResponsiveAppBar from './components/Navbar/NavBar';
 import './components/Navbar/NavBar.css'
-import ImgMediaCard from './components/Cards/Cards';
+import ImgMediaCard from './components/ItemListContainer/ItemListContainer';
 import { Grid } from '@mui/material';
 
 

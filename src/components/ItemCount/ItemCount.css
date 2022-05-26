@@ -1,3 +1,23 @@
-div {
-    background-color: blue !important;
+
+.button-menos {
+    background-color: white;
+    border-color: black;
+    color: #000000;
+    text-align: center;
+    border-radius: 5px;
+}
+.button-agregar {
+    background-color: white;
+    border-color: black;
+    color: #000000;
+    text-align: center;
+    border-radius: 5px;
+}
+    
+.button-mas {
+    background-color: white;
+    border-color: black;
+    color: #000000;
+    text-align: center;
+    border-radius: 5px;
 }
