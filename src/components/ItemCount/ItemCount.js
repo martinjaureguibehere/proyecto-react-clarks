@@ -1,18 +1,28 @@
-import { Component, useState } from "react";
-import './ItemCount.css'
-import onAdd from '../Item/Item';
+import { Button } from "@mui/material";
+import './ItemCount.css';
+import { useState } from 'react';
+import AddToCartBtn from '../../components/AddToCartBtn/AddToCartBtn.js'
 
-function ItemCount({stock, onAdd}) {
-    const [count, setCount] = useState(1)
+const ItemCount = ({product}) => {
+    const { name, price, stock } = product;
+    const [count, setCount] = useState(1);
+    const addCount = () => {
+        stock > count && setCount(count + 1);
+    }
+    const subsCount = () => {
+        count > 1 && setCount(count - 1);
+    }
     return (
-        <>
-            <div className="contenedor-botones">
-              <button className="button-menos"   onClick={()=>{setCount(count - 1)}} disabled={count === 1}>-</button>
-              <p className="p-1 text-8x1">{count}</p>
-              <button className="button-mas"  onClick={()=>{setCount(count + 1)}} disabled={count === 5}>+</button>
-              <button className="button-agregar"  disableElevation onClick={()=> onAdd( count)}> Agregar al carrito</button>
-            </div>
+<>
+        <div className="itemCount">
+            <Button size="small" variant="outlined" onClick={subsCount}>-</Button>
+            <p>{count}</p>
+            <Button size="small" variant="outlined" onClick={addCount}>+</Button>
+            
+        </div>
+        <AddToCartBtn name={name} price={price} count={count} />
         </>
-    )
+    );
 }
-export default ItemCount
+
+export default ItemCount;
