@@ -1,36 +1,46 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import './ItemListContainer.css'
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import ItemCount from '../ItemCount/ItemCount';
-import ItemList from '../ItemList/ItemList'
+import MainItem from '../MainItem/MainItem.js';
+import ItemList from '../ItemList/ItemList.js';
+import { useState, useEffect } from 'react';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner.js';
+import products from '../Mock/products';
 
 
-function ImgMediaCard() {
-     
-  return (
-    
-    <Card className='flip-card' sx={{ maxWidth: 345 }}>
-       <section className="item-list-container">
-      <h2 className="item-list-container__title">Prenda</h2>
+const ItemListContainer = () => {
+    const [productsState, setProductsState] = useState([]);
+    const [displaySpinner, setDisplaySpinner] = useState({ display: 'flex' })
 
-      <ItemList />
-    </section>
-        <ItemCount/>
-    </Card>
-  )
+    const getProducts = () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(products);
+            }, 5000);
+        });
+    };
+
+    useEffect(() => {
+        getProducts()
+            .then((res) => {
+                setProductsState(res);
+            })
+            .catch((err) => {
+                console.log('ERROR');
+            })
+            .finally(() => {
+                setDisplaySpinner({display: 'none'})
+            })
+    }, [])
+    return (
+
+        <>
+            {productsState[0] != null && <MainItem prop={productsState[0]} />}
+            <ItemList items={productsState} />
+            <LoadingSpinner display={displaySpinner}/>
+        </>
+    )
+
 }
 
-export default ImgMediaCard
 
-
+export default ItemListContainer;
 
 

@@ -1,0 +1,11 @@
+.cardItem {
+    display: flex;
+    flex-direction: column;
+    }
+.p {
+    min-height: 42px;
+    }
+.button {
+    width: 50px;
+    align-self: center;
+    }
