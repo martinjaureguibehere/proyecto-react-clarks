@@ -2,6 +2,7 @@ import { Button } from "@mui/material"
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Modal from "../Modal/Modal";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -20,7 +21,7 @@ const AddToCartBtn = ({name, price, count = 1}) => {
             <p>Agregaste {name} <strong>x{count}</strong> a tu carrito</p>
             <p>Precio unitario $ {price}</p>
             <p>Precio total <strong>x{count}</strong> $ {price * count}</p>
-            <Button color="secondary" variant="contained">Confirmar y Pagar</Button>
+            <Button variant="outlined"> <Link to='/cart'>Confirmar y Pagar</Link></Button>
             <Button variant="outlined" onClick={handleClose}>Seguir comprando</Button>
         </Modal>
         </>

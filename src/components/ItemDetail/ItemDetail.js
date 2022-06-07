@@ -2,9 +2,19 @@ import * as React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { Container, Divider, Grid, Paper, Typography} from '@mui/material';
 import './ItemDetail.css';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import { useState } from 'react';
 
 const ItemDetail = ({product}) => {
 const {image, name, price, stock, description} = product;
+
+const [size, setSize] = useState('');
+
+const handleChange = (event) => {
+    setSize(event.target.value);
+};
+
     return (
         <Container maxWidth='lg'>
             
@@ -28,6 +38,24 @@ const {image, name, price, stock, description} = product;
                     </Paper>
                 </Grid>
             </Grid>
+            <div>
+            <label>Selecciona tu talle</label>
+                <Select
+                    className='select-custom'
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={size}
+                    placeholder="Selecciona tu talle"
+                    onChange={handleChange} 
+                    >
+                    <MenuItem value={'s'}>S</MenuItem>
+                    <MenuItem value={'m'}>M</MenuItem>
+                    <MenuItem value={'l'}>L</MenuItem>
+                    <MenuItem value={'xl'}>XL</MenuItem>
+                    <MenuItem value={'xxl'}>XXL</MenuItem>
+
+                </Select>
+            </div>
             <h3>Descripción:</h3>
             <Typography variant="body1" margin="20px">{description}</Typography>
             </Paper>

@@ -3,6 +3,8 @@ import Card from '@mui/material/Card';
 import * as React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import './Item.css'
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 
 const Item = ({ product }) => {
@@ -13,6 +15,9 @@ const Item = ({ product }) => {
            <CardContent>
                <div className="cardItem">
                    <img src={`${image}`} alt={name} />
+                   <Button variant={'contained'} className="card-btn-details">
+                        <Link to={`/product/{id}`}>Ver Detalle</Link>
+                    </Button>
                    <p>{name}</p>
                    <small>Stock: {stock} u.</small>
                    <span>$ {price}</span>
