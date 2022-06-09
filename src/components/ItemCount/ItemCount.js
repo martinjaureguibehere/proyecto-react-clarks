@@ -1,7 +1,8 @@
 import { Button } from "@mui/material";
 import './ItemCount.css';
-import { useState } from 'react';
 import AddToCartBtn from '../../components/AddToCartBtn/AddToCartBtn.js'
+import CartContext from '../../context/CartContext'
+import { useState, useContext } from 'react'
 
 const ItemCount = ({product}) => {
     const { name, price, stock } = product;
@@ -20,7 +21,6 @@ const ItemCount = ({product}) => {
             <Button size="small" variant="outlined" onClick={addCount}>+</Button>
             
         </div>
-        <AddToCartBtn name={name} price={price} count={count} />
         </>
     );
 }

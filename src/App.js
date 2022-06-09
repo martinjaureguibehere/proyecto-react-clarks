@@ -8,6 +8,7 @@ import Contact from '../src/Pages/Contact'
 import Home from './Pages/Home';
 import Products from '../src/Pages/Products';
 import Detail from './Pages/Detail'
+import { CartProvider } from '../src/context/CartContext'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
 
     <div className="App">
+    <CartProvider>
       <BrowserRouter>
         <ResponsiveAppBar />
         <Routes>
@@ -25,6 +27,7 @@ function App() {
           <Route path='/product/:id' element={<Detail/>} />
         </Routes>
       </BrowserRouter>
+    </CartProvider> 
     </div>
   );
 }

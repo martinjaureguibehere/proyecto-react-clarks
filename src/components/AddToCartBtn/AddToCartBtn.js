@@ -1,12 +1,14 @@
 import { Button } from "@mui/material"
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Modal from "../Modal/Modal";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import CartContext from "../../context/CartContext";
+import { useState, useContext } from 'react'
 
 
 
 const AddToCartBtn = ({name, price, count = 1}) => { 
+    const { addProductToCart } = useContext(CartContext)
     const [open, setOpen] = useState(false)
     const handleClose = () => {
       setOpen(false)
@@ -21,8 +23,9 @@ const AddToCartBtn = ({name, price, count = 1}) => {
             <p>Agregaste {name} <strong>x{count}</strong> a tu carrito</p>
             <p>Precio unitario $ {price}</p>
             <p>Precio total <strong>x{count}</strong> $ {price * count}</p>
-            <Button variant="outlined"> <Link to='/cart'>Confirmar y Pagar</Link></Button>
-            <Button variant="outlined" onClick={handleClose}>Seguir comprando</Button>
+            <Button variant="outlined"  > <Link to='/cart'>Confirmar</Link></Button>
+
+            <Button variant="outlined" >Seguir comprando</Button>
         </Modal>
         </>
     )

@@ -13,7 +13,7 @@ const ItemListContainer = () => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(products);
-            }, 5000);
+            }, 1000);
         });
     };
 

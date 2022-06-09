@@ -7,12 +7,12 @@ const ItemList = ({ items }) => {
         <>
             <h2>Catálogo de Productos</h2>
             <Container>
-                <Grid container spacing={3}>
+                <Grid container spacing={2}>
                     {
                         items.map((product) => {
 
                             return (
-                                <Grid item lg={2} md={3} sm={4} xs={6} key={product.id}>
+                                <Grid item lg={4} md={3} sm={12} xs={12} key={product.id}>
                                     <Item product={product} />
                                 </Grid>
                             )
