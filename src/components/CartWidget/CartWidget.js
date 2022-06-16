@@ -16,6 +16,10 @@ const CartWidget = () =>  {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    //const handleRemoveUser = (uid) =>{
+      //  const newUser = item.filter((user) => user.uid !==uid);
+        //setItems(newItems);
+    //};
 
     return(
         <div className='cart-container-icon'>
@@ -42,6 +46,7 @@ const CartWidget = () =>  {
                             <Link to="/products" >Empezar a comprar</Link>
                         </>
                     )}
+                   
                     {cartListItems.map( (item) => {
                         return(
                         <div className='item-cart-prod' key={item.id}>
@@ -53,7 +58,7 @@ const CartWidget = () =>  {
                                 <span className='precio-cart'>$ {item.price}</span>
                             </div>
                             <div className='cart-total'>
-                                <button>
+                                <button >
                                     <DeleteIcon />
                                 </button>
                             </div>

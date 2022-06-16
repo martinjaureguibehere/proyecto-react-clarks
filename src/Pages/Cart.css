@@ -1,0 +1,34 @@
+
+.col-cart-table__head {
+    display: flex ;
+    border-bottom: 1px solid;
+    
+    }
+.col-cart-table__head h2{
+    font-size: 15px;
+    width: 20%;
+}
+.cart-table__content {
+    display: flex;
+}
+.cart-table__content > div {
+    width: 20%;
+    border-bottom: 1px solid rgb(194, 191, 191);
+}
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+}
+.cart-checkout-details button{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    text-transform: none;
+    padding: 10px 20px;
+}
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    background-color: black;
+}
+.cart-table__content-img img {
+    width: 75%;
+}
